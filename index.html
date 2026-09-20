@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EXAMPLE CAFE MENU</title>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 15px 0;
+    }
+/
+    .wrapper {
+        border: 2px solid #e27d89;
+        width: 1000px;
+        max-width: 92vw;
+        background-color: white;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .header-main {
+        text-align: center;
+        background-color: white;
+        padding: 15px 0 10px 0;
+        position: relative;
+    }
+
+    .header-title-container {
+        position: relative;
+        display: inline-block;
+    }
+
+    .header-main h1 {
+        color: #d9534f;
+        font-family: 'Times New Roman', Times, serif;
+        font-style: italic;
+        font-size: 28px;
+        letter-spacing: 2px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .header-title-container::after {
+        content: "EXAMPLE CAFE MENU";
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        color: rgba(217, 83, 79, 0.25);
+        font-family: 'Times New Roman', Times, serif;
+        font-style: italic;
+        font-size: 28px;
+        letter-spacing: 2px;
+        z-index: 1;
+        white-space: nowrap;
+    }
+
+    .nav {
+        background-color: #f19f9d;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 10px;
+        border-top: 1px solid #d9534f;
+        border-bottom: 1px solid #d9534f;
+        gap: 15px;
+    }
+
+    .nav-left {
+        display: flex;
+        align-items: center;
+    }
+
+    .home-icon-container {
+        border: 1px solid #d9534f;
+        background-color: #f6b5b5;
+        padding: 2px 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 15px;
+    }
+
+    .home-icon-container img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .nav-link-group {
+        display: flex;
+        align-items: center;
+        border-left: 1px solid white;  /* Thanh ngăn ở ĐẦU */
+        border-right: 1px solid white; /* Thanh ngăn ở ĐUÔI */
+    }
+
+    .nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 13px;
+        padding: 0 15px;
+        text-transform: uppercase;
+        border-right: 1px solid white; /* Thanh ngăn giữa các mục */
+    }
+
+    .nav-link-group a:last-child {
+        border-right: none;
+    }
+
+    .search-box {
+        display: flex;
+        gap: 5px;
+    }
+
+    .search-box input[type="text"] {
+        padding: 2px 5px;
+        border: 1px solid #ccc;
+        font-size: 12px;
+        width: 120px;
+    }
+
+    .search-box input[type="button"] {
+        background-color: #fff;
+        border: 1px solid #ccc;
+        color: black;
+        cursor: pointer;
+        padding: 2px 10px;
+        font-size: 12px;
+    }
+
+    .content-area {
+        display: flex;
+    }
+
+    .sidebar-left {
+        width: 160px;
+        background-color: white;
+        padding: 12px 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .nav-btn {
+        background-color: #f6b5b5;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        width: 100%;
+        padding: 6px 12px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 12px;
+        text-align: left; /* Chữ căn lề trái */
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    }
+
+    .elip-img-container {
+        margin-top: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .elip-img {
+        width: 130px;
+        height: 85px;
+        border-radius: 50% / 50%;
+        object-fit: cover;
+        box-shadow: 0 0 8px rgba(226, 125, 137, 0.4);
+    }
+
+    .main-content-panel {
+        flex: 1;
+        background-color: white;
+        padding: 12px 20px;
+    }
+
+    .section-header-container {
+        text-align: center;
+        margin-bottom: 8px;
+    }
+
+    .section-header {
+    background-color: #f19f9d;
+    color: #b82329;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: left;
+    padding: 4px 15px;
+    display: block;
+    width: 220px;
+    margin: 0 auto;
+    white-space: nowrap;
+}
+    .item-list {
+        margin-left: 20px;
+        margin-bottom: 4px;
+        font-size: 13px;
+    }
+
+    .item-list li {
+        margin-bottom: 4px;
+    }
+
+    .red-text {
+        color: #d9534f;
+        font-weight: bold;
+    }
+
+    .back-link {
+        color: #d9534f;
+        font-size: 11px;
+        font-weight: bold;
+        text-decoration: underline;
+        margin-bottom: 12px;
+        display: inline-block;
+    }
+
+    .info-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 8px;
+    }
+
+    .form-group input[type="text"],
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 6px;
+        border: 1px solid #ccc;
+        color: #555;
+        font-size: 12px;
+        border-radius: 2px;
+    }
+
+    .radio-group {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 12px;
+        color: #555;
+    }
+
+    .form-group textarea {
+        height: 70px;
+        grid-column: span 2;
+        resize: vertical;
+    }
+
+    .form-buttons {
+        grid-column: span 2;
+        display: flex;
+        gap: 8px;
+    }
+
+    .form-buttons button {
+        padding: 4px 15px;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        font-size: 11px;
+    }
+
+    .sidebar-right {
+        width: 230px;
+        background-color: #000;
+        color: #fff;
+        padding: 12px;
+    }
+
+    .sidebar-right h2 {
+        font-size: 20px;
+        margin-bottom: 12px;
+    }
+
+    .event-item {
+        margin-bottom: 15px;
+    }
+
+    .event-item h3 {
+        font-size: 14px;
+        margin-bottom: 6px;
+        font-weight: bold;
+    }
+
+    .event-item img {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+        margin-bottom: 6px;
+    }
+
+    .event-item p {
+        font-size: 11px;
+        color: #ccc;
+        line-height: 1.35;
+        text-align: justify;
+    }
+
+    .event-item a {
+        color: #ccc;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    .more-text {
+        display: none;
+    }
+
+    .footer {
+        background-color: #f19f9d;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+        font-style: italic;
+        font-size: 16px;
+        border-top: 1px solid #d9534f;
+    }
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+    <header class="header-main">
+        <div class="header-title-container">
+            <h1>EXAMPLE CAFE MENU</h1>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="nav-left">
+            <div class="home-icon-container">
+                <img src="c:\Users\HP\AppData\Local\Temp\4658b01d-a8f2-485d-956e-566b553cff7b_assets.zip.f7b\assets\icons8-home-50.png" alt="Home">
+            </div>
+            <div class="nav-link-group">
+                <a href="#">STARTER</a>
+                <a href="#">MAIN COURSES</a>
+                <a href="#">DESSERTS</a>
+            </div>
+        </div>
+        <div class="search-box">
+            <input type="text">
+            <input type="button" value="Go">
+        </div>
+    </nav>
+
+    <main class="content-area">
+        <aside class="sidebar-left">
+            <a href="#" class="nav-btn">Cafe Latte</a>
+            <a href="#" class="nav-btn">Capuchino</a>
+            <a href="#" class="nav-btn">Ocean Blue</a>
+            <a href="#" class="nav-btn">Ice-cream Cafe</a>
+            <a href="#" class="nav-btn">Order Online</a>
+            
+            <div class="elip-img-container">
+                <img src="c:\Users\HP\AppData\Local\Temp\8c0ee79d-fe91-44d0-aed5-3af91c4d3755_assets.zip.755\assets\company.png" alt="Company Group" class="elip-img">
+            </div>
+        </aside>
+
+        <section class="main-content-panel">
+            <div class="section-header-container">
+                <div class="section-header">S t a r t e r</div>
+            </div>
+            <ul class="item-list">
+                <li>Chesnut and Mushroom Goujons <span class="red-text">(v)</span></li>
+                <li>Goat Cheese<span class="red-text">(v)</span></li>
+                <li><span class="red-text">HONEY SOY CHICKEN KEBABS(V)</span></li>
+                <li>Seafood Salad<span class="red-text">(v)</span></li>
+            </ul>
+            <a href="#" class="back-link">Back to Top</a>
+
+            <div class="section-header-container">
+                <div class="section-header">D e s s e r t s</div>
+            </div>
+            <ul class="item-list">
+                <li>Lemon Sorbet <span class="red-text">(v)</span></li>
+                <li>Chocolate Mud Pie<span class="red-text">(v)</span></li>
+                <li>Pecan Pie<span class="red-text">(v)</span></li>
+                <li>Selection of fine Cheeses from Around the World<span class="red-text">(v)</span></li>
+            </ul>
+            <a href="#" class="back-link">Back to Top</a>
+
+            <div class="section-header-container">
+                <div class="section-header">I N F O R M A T I O N</div>
+            </div>
+            <form>
+                <div class="info-form">
+                    <div class="form-group">
+                        <input type="text" value="First Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" value="Last Name'">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" value="Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" value="Telephone">
+                    </div>
+                    <div class="form-group">
+                        <select>
+                            <option>USA</option>
+                        </select>
+                    </div>
+                    <div class="radio-group">
+                        <label><input type="radio" name="nationality"> Vietnamese</label>
+                        <label><input type="radio" name="nationality"> Foreigner</label>
+                    </div>
+                    <div class="form-group" style="grid-column: span 2;">
+                        <textarea>Comment</textarea>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="submit">Submit</button>
+                        <button type="reset">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <aside class="sidebar-right">
+            <h2>Events</h2>
+            
+            <div class="event-item">
+                <h3>Regular Meetings</h3>
+                <img src="c:\Users\HP\AppData\Local\Temp\527424f2-2700-4db7-96f3-99bfb877deb1_assets.zip.eb1\assets\meeting.png" alt="Regular Meetings">
+                <p>
+                    Host your regular team meetings or activities in the comfort of your own private room. 
+                    <span id="more-regular" class="more-text">Charge up on Kith's aromatic coffee and delectable dishes for that extra boost in your work!</span>
+                    <a href="javascript:void(0);" id="btn-regular" onclick="toggleReadMore('more-regular', 'btn-regular')">Read more...</a>
+                </p>
+            </div>
+
+            <div class="event-item">
+                <h3>Product Launches</h3>
+                <img src="c:\Users\HP\AppData\Local\Temp\1a5c4431-66c7-4983-85b4-ea7067b44a6a_assets.zip.a6a\assets\launch.png" alt="Product Launches">
+                <p>
+                    Launch your product with ease in a space that truly fits its image.
+                    <span id="more-launch" class="more-text">Create an unforgettable experience for your guests with our spacious outlets! Whether you want to host an intimate celebration or launch an event for hundreds of guests, Kith's space is customisable to your needs.</span>
+                    <a href="javascript:void(0);" id="btn-launch" onclick="toggleReadMore('more-launch', 'btn-launch')">Read more...</a>
+                </p>
+            </div>
+
+        </aside>
+    </main>
+
+    <footer class="footer">
+        ABC Company <sup>©</sup> - 12345678 - abccoffee@gmail.com
+    </footer>
+</div>
+
+<script>
+function toggleReadMore(contentId, buttonId) {
+    var moreText = document.getElementById(contentId);
+    var btnText = document.getElementById(buttonId);
+
+    if (moreText.style.display === "inline") {
+        moreText.style.display = "none";
+        btnText.innerHTML = "Read more...";
+    } else {
+        moreText.style.display = "inline";
+        btnText.innerHTML = " Read less";
+    }
+}
+</script>
+
+</body>
+</html>
