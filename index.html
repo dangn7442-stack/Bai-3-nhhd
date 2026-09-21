@@ -13,106 +13,99 @@
     }
 
     body {
-        background-color: #ffffff;
+        background-color: #f8f8f8;
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 100vh;
-        padding: 15px 0;
-    }
-/
-    .wrapper {
-        border: 2px solid #e27d89;
-        width: 1000px;
-        max-width: 92vw;
-        background-color: white;
+        height: 100vh;
+        width: 100vw;
         overflow: hidden;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
 
-    .header-main {
-        text-align: center;
+    .wrapper {
+        border: 2px solid #a80015;
+        width: 96%;
+        max-width: 1400px;
+        height: 96vh;
         background-color: white;
-        padding: 15px 0 10px 0;
-        position: relative;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
     }
 
-    .header-title-container {
-        position: relative;
-        display: inline-block;
+    /* HEADER */
+    .header-main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        padding: 10px 0 6px 0;
+        width: 100%;
     }
 
     .header-main h1 {
-        color: #d9534f;
+        color: #b81d24;
         font-family: 'Times New Roman', Times, serif;
         font-style: italic;
-        font-size: 28px;
-        letter-spacing: 2px;
-        position: relative;
-        z-index: 2;
+        font-size: 38px;
+        letter-spacing: 0.5px;
+        font-weight: bold;
+        text-shadow: 2px 2px 5px rgba(184, 29, 36, 0.35);
+        margin: 0;
+        padding: 0;
     }
 
-    .header-title-container::after {
-        content: "EXAMPLE CAFE MENU";
-        position: absolute;
-        top: 8px;
-        left: 8px;
-        color: rgba(217, 83, 79, 0.25);
-        font-family: 'Times New Roman', Times, serif;
-        font-style: italic;
-        font-size: 28px;
-        letter-spacing: 2px;
-        z-index: 1;
-        white-space: nowrap;
-    }
-
+    /* THANH NAV */
     .nav {
         background-color: #f19f9d;
-        height: 38px;
+        height: 46px;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 0 10px;
-        border-top: 1px solid #d9534f;
-        border-bottom: 1px solid #d9534f;
         gap: 15px;
+        padding: 0 20px;
+        border-top: 1px solid #b81d24;
+        border-bottom: 1px solid #b81d24;
+        flex-shrink: 0;
     }
 
-    .nav-left {
+    .nav-center-group {
         display: flex;
         align-items: center;
     }
 
     .home-icon-container {
-        border: 1px solid #d9534f;
+        border: 1px solid #b81d24;
         background-color: #f6b5b5;
-        padding: 2px 5px;
+        padding: 3px 6px;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-right: 15px;
+        margin-right: 10px;
     }
 
     .home-icon-container img {
-        width: 16px;
-        height: 16px;
+        width: 18px;
+        height: 18px;
     }
 
     .nav-link-group {
         display: flex;
         align-items: center;
-        border-left: 1px solid white;  /* Thanh ngăn ở ĐẦU */
-        border-right: 1px solid white; /* Thanh ngăn ở ĐUÔI */
+        border-left: 1px solid white;
+        border-right: 1px solid white;
     }
 
     .nav a {
         color: white;
         text-decoration: none;
         font-weight: bold;
-        font-size: 13px;
-        padding: 0 15px;
+        font-size: 15px;
+        padding: 4px 10px;
         text-transform: uppercase;
-        border-right: 1px solid white; /* Thanh ngăn giữa các mục */
+        border-right: 1px solid white;
+        white-space: nowrap;
     }
 
     .nav-link-group a:last-child {
@@ -121,14 +114,15 @@
 
     .search-box {
         display: flex;
+        align-items: center;
         gap: 5px;
     }
 
     .search-box input[type="text"] {
-        padding: 2px 5px;
+        padding: 3px 6px;
         border: 1px solid #ccc;
         font-size: 12px;
-        width: 120px;
+        width: 130px;
     }
 
     .search-box input[type="button"] {
@@ -136,22 +130,26 @@
         border: 1px solid #ccc;
         color: black;
         cursor: pointer;
-        padding: 2px 10px;
+        padding: 3px 8px;
         font-size: 12px;
     }
 
     .content-area {
         display: flex;
+        flex: 1;
+        overflow: hidden;
     }
 
     .sidebar-left {
-        width: 160px;
+        width: 200px;
         background-color: white;
-        padding: 12px 10px;
+        padding: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 8px;
+        gap: 6px;
+        border-right: 1px solid #f0f0f0;
+        flex-shrink: 0;
     }
 
     .nav-btn {
@@ -164,7 +162,7 @@
         text-decoration: none;
         font-weight: bold;
         font-size: 12px;
-        text-align: left; /* Chữ căn lề trái */
+        text-align: left;
         box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
     }
 
@@ -176,90 +174,121 @@
     }
 
     .elip-img {
-        width: 130px;
-        height: 85px;
-        border-radius: 50% / 50%;
+        width: 125px;
+        height: 80px;
+        border-radius: 50%;
         object-fit: cover;
-        box-shadow: 0 0 8px rgba(226, 125, 137, 0.4);
+        box-shadow: 0 4px 12px rgba(184, 29, 36, 0.45);
     }
 
     .main-content-panel {
         flex: 1;
         background-color: white;
-        padding: 12px 20px;
+        padding: 10px 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        overflow-y: auto;
     }
 
+    /* KHUNG CHỨA CÁC THANH TIÊU ĐỀ CANH GIỮA */
     .section-header-container {
         text-align: center;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
+        margin-top: 6px;
+        width: 100%;
     }
 
+    /* ĐÃ TĂNG ĐỘ LỚN, BACKGROUND BẰNG NHAU (BẰNG THANH DÀI NHẤT) VÀ CHỮ CĂN BÊN TRÁI */
     .section-header {
-    background-color: #f19f9d;
-    color: #b82329;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 15px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-align: left;
-    padding: 4px 15px;
-    display: block;
-    width: 220px;
-    margin: 0 auto;
-    white-space: nowrap;
-}
+        background-color: #f19f9d;
+        color: #900c12;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 16px; /* Tăng độ lớn font chữ */
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-align: left; /* Chữ về phía bên trái */
+        padding: 6px 20px; /* Tăng chiều cao thanh */
+        display: block;
+        width: 85%; /* Độ rộng đồng nhất bằng thanh dài nhất */
+        max-width: 650px;
+        margin: 0 auto; /* Canh giữa khung thanh tiêu đề */
+        white-space: nowrap;
+        box-sizing: border-box;
+    }
+
     .item-list {
         margin-left: 20px;
-        margin-bottom: 4px;
-        font-size: 13px;
+        margin-bottom: 2px;
+        font-size: 12px;
     }
 
     .item-list li {
-        margin-bottom: 4px;
+        margin-bottom: 3px;
     }
 
     .red-text {
-        color: #d9534f;
+        color: #b81d24;
+        font-weight: bold;
+    }
+
+    .orange-text {
+        color: #d99a00;
         font-weight: bold;
     }
 
     .back-link {
-        color: #d9534f;
+        color: #b81d24;
         font-size: 11px;
         font-weight: bold;
         text-decoration: underline;
-        margin-bottom: 12px;
+        margin-bottom: 4px;
         display: inline-block;
+    }
+
+    .info-section {
+        margin-top: 5px;
     }
 
     .info-form {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        margin-top: 8px;
+        gap: 8px;
+        margin-top: 6px;
     }
 
     .form-group input[type="text"],
-    .form-group select,
-    .form-group textarea {
+    .form-group select {
         width: 100%;
-        padding: 6px;
+        padding: 7px 10px;
         border: 1px solid #ccc;
-        color: #555;
-        font-size: 12px;
-        border-radius: 2px;
+        color: #333;
+        font-size: 13px;
+        border-radius: 4px;
     }
 
     .radio-group {
         display: flex;
         align-items: center;
-        gap: 12px;
-        font-size: 12px;
-        color: #555;
+        gap: 15px;
+        font-size: 13px;
+        color: #333;
+    }
+
+    .radio-group input[type="radio"] {
+        transform: scale(1.1);
+        cursor: pointer;
     }
 
     .form-group textarea {
-        height: 70px;
+        width: 100%;
+        height: 65px;
+        min-height: 50px;
+        padding: 8px 10px;
+        border: 1px solid #ccc;
+        color: #333;
+        font-size: 13px;
+        border-radius: 4px;
         grid-column: span 2;
         resize: vertical;
     }
@@ -267,50 +296,59 @@
     .form-buttons {
         grid-column: span 2;
         display: flex;
-        gap: 8px;
+        gap: 10px;
     }
 
     .form-buttons button {
-        padding: 4px 15px;
+        padding: 6px 18px;
         background-color: #f0f0f0;
         border: 1px solid #ccc;
         cursor: pointer;
-        font-size: 11px;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 3px;
+    }
+
+    .form-buttons button:hover {
+        background-color: #e0e0e0;
     }
 
     .sidebar-right {
-        width: 230px;
+        width: 250px;
         background-color: #000;
         color: #fff;
-        padding: 12px;
+        padding: 10px 12px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
     }
 
     .sidebar-right h2 {
-        font-size: 20px;
-        margin-bottom: 12px;
+        font-size: 16px;
+        margin-bottom: 6px;
     }
 
     .event-item {
-        margin-bottom: 15px;
+        margin-bottom: 8px;
     }
 
     .event-item h3 {
-        font-size: 14px;
-        margin-bottom: 6px;
+        font-size: 12px;
+        margin-bottom: 3px;
         font-weight: bold;
     }
 
     .event-item img {
         width: 100%;
-        height: 100px;
+        height: 65px;
         object-fit: cover;
-        margin-bottom: 6px;
+        margin-bottom: 3px;
     }
 
     .event-item p {
         font-size: 11px;
         color: #ccc;
-        line-height: 1.35;
+        line-height: 1.25;
         text-align: justify;
     }
 
@@ -327,11 +365,12 @@
     .footer {
         background-color: #f19f9d;
         color: white;
-        padding: 10px 0;
+        padding: 8px 0;
         text-align: center;
         font-style: italic;
-        font-size: 16px;
-        border-top: 1px solid #d9534f;
+        font-size: 14px;
+        border-top: 1px solid #b81d24;
+        flex-shrink: 0;
     }
 </style>
 </head>
@@ -339,15 +378,13 @@
 
 <div class="wrapper">
     <header class="header-main">
-        <div class="header-title-container">
-            <h1>EXAMPLE CAFE MENU</h1>
-        </div>
+        <h1>EXAMPLE CAFE MENU</h1>
     </header>
 
     <nav class="nav">
-        <div class="nav-left">
+        <div class="nav-center-group">
             <div class="home-icon-container">
-                <img src="c:\Users\HP\AppData\Local\Temp\4658b01d-a8f2-485d-956e-566b553cff7b_assets.zip.f7b\assets\icons8-home-50.png" alt="Home">
+                <img src="images/icons8-home-50.png" alt="Home">
             </div>
             <div class="nav-link-group">
                 <a href="#">STARTER</a>
@@ -355,8 +392,9 @@
                 <a href="#">DESSERTS</a>
             </div>
         </div>
+        
         <div class="search-box">
-            <input type="text">
+            <input type="text" placeholder="Search...">
             <input type="button" value="Go">
         </div>
     </nav>
@@ -370,68 +408,73 @@
             <a href="#" class="nav-btn">Order Online</a>
             
             <div class="elip-img-container">
-                <img src="c:\Users\HP\AppData\Local\Temp\8c0ee79d-fe91-44d0-aed5-3af91c4d3755_assets.zip.755\assets\company.png" alt="Company Group" class="elip-img">
+                <img src="images/company.png" alt="Company Group" class="elip-img">
             </div>
         </aside>
 
         <section class="main-content-panel">
-            <div class="section-header-container">
-                <div class="section-header">S t a r t e r</div>
-            </div>
-            <ul class="item-list">
-                <li>Chesnut and Mushroom Goujons <span class="red-text">(v)</span></li>
-                <li>Goat Cheese<span class="red-text">(v)</span></li>
-                <li><span class="red-text">HONEY SOY CHICKEN KEBABS(V)</span></li>
-                <li>Seafood Salad<span class="red-text">(v)</span></li>
-            </ul>
-            <a href="#" class="back-link">Back to Top</a>
-
-            <div class="section-header-container">
-                <div class="section-header">D e s s e r t s</div>
-            </div>
-            <ul class="item-list">
-                <li>Lemon Sorbet <span class="red-text">(v)</span></li>
-                <li>Chocolate Mud Pie<span class="red-text">(v)</span></li>
-                <li>Pecan Pie<span class="red-text">(v)</span></li>
-                <li>Selection of fine Cheeses from Around the World<span class="red-text">(v)</span></li>
-            </ul>
-            <a href="#" class="back-link">Back to Top</a>
-
-            <div class="section-header-container">
-                <div class="section-header">I N F O R M A T I O N</div>
-            </div>
-            <form>
-                <div class="info-form">
-                    <div class="form-group">
-                        <input type="text" value="First Name">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" value="Last Name'">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" value="Email">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" value="Telephone">
-                    </div>
-                    <div class="form-group">
-                        <select>
-                            <option>USA</option>
-                        </select>
-                    </div>
-                    <div class="radio-group">
-                        <label><input type="radio" name="nationality"> Vietnamese</label>
-                        <label><input type="radio" name="nationality"> Foreigner</label>
-                    </div>
-                    <div class="form-group" style="grid-column: span 2;">
-                        <textarea>Comment</textarea>
-                    </div>
-                    <div class="form-buttons">
-                        <button type="submit">Submit</button>
-                        <button type="reset">Cancel</button>
-                    </div>
+            <div>
+                <div class="section-header-container">
+                    <div class="section-header">S t a r t e r</div>
                 </div>
-            </form>
+                <ul class="item-list">
+                    <li>Chesnut and Mushroom Goujons <span class="red-text">(v)</span></li>
+                    <li>Goat Cheese <span class="red-text">(v)</span></li>
+                    <li><span class="orange-text">HONEY SOY CHICKEN KEBABS</span> <span class="red-text">(v)</span></li>
+                    <li>Seafood Salad <span class="red-text">(v)</span></li>
+                </ul>
+                <a href="#" class="back-link">Back to Top</a>
+
+                <div class="section-header-container">
+                    <div class="section-header">D e s s e r t s</div>
+                </div>
+                <ul class="item-list">
+                    <li>Lemon Sorbet <span class="red-text">(v)</span></li>
+                    <li>Chocolate Mud Pie <span class="red-text">(v)</span></li>
+                    <li>Pecan Pie <span class="red-text">(v)</span></li>
+                    <li>Selection of fine Cheeses from Around the World <span class="red-text">(v)</span></li>
+                </ul>
+                <a href="#" class="back-link">Back to Top</a>
+            </div>
+
+            <div class="info-section">
+                <div class="section-header-container">
+                    <div class="section-header">I N F O R M A T I O N</div>
+                </div>
+                <form>
+                    <div class="info-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="First Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Last Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Telephone">
+                        </div>
+                        <div class="form-group">
+                            <select>
+                                <option value="USA">USA</option>
+                                <option value="VN">Vietnam</option>
+                            </select>
+                        </div>
+                        <div class="radio-group">
+                            <label><input type="radio" name="nationality" value="vietnamese"> Vietnamese</label>
+                            <label><input type="radio" name="nationality" value="foreigner"> Foreigner</label>
+                        </div>
+                        <div class="form-group" style="grid-column: span 2;">
+                            <textarea placeholder="Comment"></textarea>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="submit">Submit</button>
+                            <button type="reset">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </section>
 
         <aside class="sidebar-right">
@@ -439,24 +482,23 @@
             
             <div class="event-item">
                 <h3>Regular Meetings</h3>
-                <img src="c:\Users\HP\AppData\Local\Temp\527424f2-2700-4db7-96f3-99bfb877deb1_assets.zip.eb1\assets\meeting.png" alt="Regular Meetings">
+                <img src="images/meeting.png" alt="Regular Meetings">
                 <p>
                     Host your regular team meetings or activities in the comfort of your own private room. 
-                    <span id="more-regular" class="more-text">Charge up on Kith's aromatic coffee and delectable dishes for that extra boost in your work!</span>
+                    <span id="more-regular" class="more-text">Charge up on Kith's aromatic coffee and delectable dishes!</span>
                     <a href="javascript:void(0);" id="btn-regular" onclick="toggleReadMore('more-regular', 'btn-regular')">Read more...</a>
                 </p>
             </div>
 
             <div class="event-item">
                 <h3>Product Launches</h3>
-                <img src="c:\Users\HP\AppData\Local\Temp\1a5c4431-66c7-4983-85b4-ea7067b44a6a_assets.zip.a6a\assets\launch.png" alt="Product Launches">
+                <img src="images/launch.png" alt="Product Launches">
                 <p>
-                    Launch your product with ease in a space that truly fits its image.
-                    <span id="more-launch" class="more-text">Create an unforgettable experience for your guests with our spacious outlets! Whether you want to host an intimate celebration or launch an event for hundreds of guests, Kith's space is customisable to your needs.</span>
+                    Launch your product with ease in a space that truly fits its image. 
+                    <span id="more-launch" class="more-text">Create an unforgettable experience for your guests!</span>
                     <a href="javascript:void(0);" id="btn-launch" onclick="toggleReadMore('more-launch', 'btn-launch')">Read more...</a>
                 </p>
             </div>
-
         </aside>
     </main>
 
