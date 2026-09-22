@@ -34,7 +34,7 @@
         overflow: hidden;
     }
 
-    /* HEADER */
+    /* HEADER - TIÊU ĐỀ */
     .header-main {
         display: flex;
         justify-content: center;
@@ -42,28 +42,31 @@
         background-color: white;
         padding: 10px 0 6px 0;
         width: 100%;
+        height: 8vh;
     }
 
-    .header-main h1 {
-        color: #b81d24;
-        font-family: 'Times New Roman', Times, serif;
+    .header-main h1, h1 {
+        display: flex;
         font-style: italic;
+        color: rgb(203, 92, 110);
+        text-shadow: 5px 5px 0px #edcccc;
+        justify-content: center;
+        align-items: center;
+        margin: 0px;
+        font-family: 'Times New Roman', Times, serif;
         font-size: 38px;
         letter-spacing: 0.5px;
-        font-weight: bold;
-        text-shadow: 2px 2px 5px rgba(184, 29, 36, 0.35);
-        margin: 0;
-        padding: 0;
+        font-weight: 900;
     }
 
     /* THANH NAV */
-    .nav {
+    .nav, .navigation {
         background-color: #f19f9d;
-        height: 46px;
+        height: 5vh;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 15px;
+        gap: 20px;
         padding: 0 20px;
         border-top: 1px solid #b81d24;
         border-bottom: 1px solid #b81d24;
@@ -76,13 +79,11 @@
     }
 
     .home-icon-container {
-        border: 1px solid #b81d24;
-        background-color: #f6b5b5;
         padding: 3px 6px;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-right: 10px;
+        margin-right: 25px;
     }
 
     .home-icon-container img {
@@ -93,18 +94,19 @@
     .nav-link-group {
         display: flex;
         align-items: center;
-        border-left: 1px solid white;
-        border-right: 1px solid white;
+        border-left: 1px solid #666;
+        border-right: 1px solid #666;
     }
 
     .nav a {
         color: white;
         text-decoration: none;
         font-weight: bold;
-        font-size: 15px;
-        padding: 4px 10px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 16px;
+        padding: 4px 35px;
         text-transform: uppercase;
-        border-right: 1px solid white;
+        border-right: 1px solid #666;
         white-space: nowrap;
     }
 
@@ -116,13 +118,14 @@
         display: flex;
         align-items: center;
         gap: 5px;
+        margin-left: 10px;
     }
 
     .search-box input[type="text"] {
         padding: 3px 6px;
         border: 1px solid #ccc;
         font-size: 12px;
-        width: 130px;
+        width: 140px;
     }
 
     .search-box input[type="button"] {
@@ -141,7 +144,7 @@
     }
 
     .sidebar-left {
-        width: 200px;
+        width: 220px;
         background-color: white;
         padding: 10px;
         display: flex;
@@ -167,54 +170,57 @@
     }
 
     .elip-img-container {
-        margin-top: 10px;
+        margin-top: 15px;
         width: 100%;
         display: flex;
         justify-content: center;
     }
 
     .elip-img {
-        width: 125px;
-        height: 80px;
+        width: 170px;
+        height: 110px;
         border-radius: 50%;
         object-fit: cover;
-        box-shadow: 0 4px 12px rgba(184, 29, 36, 0.45);
+        box-shadow: 12px 12px 18px rgba(185, 80, 95, 0.75);
+        transition: transform 0.2s ease;
+    }
+
+    .elip-img:hover {
+        transform: scale(1.04);
     }
 
     .main-content-panel {
         flex: 1;
         background-color: white;
-        padding: 10px 25px;
+        padding: 10px 15px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         overflow-y: auto;
     }
 
-    /* KHUNG CHỨA CÁC THANH TIÊU ĐỀ CANH GIỮA */
+    /* ĐÃ SỬA: CHUẨN MÀU, ĐỘ DÀI VÀ CHỮ GIỐNG HÌNH ẢNH MỚI */
     .section-header-container {
         text-align: center;
         margin-bottom: 6px;
-        margin-top: 6px;
-        width: 100%;
+        margin-top: 8px;
+        width: 50%;
+        justify-content: center;
     }
 
-    /* ĐÃ TĂNG ĐỘ LỚN, BACKGROUND BẰNG NHAU (BẰNG THANH DÀI NHẤT) VÀ CHỮ CĂN BÊN TRÁI */
     .section-header {
-        background-color: #f19f9d;
-        color: #900c12;
+        background-color: #f19f9d; /* Màu nền đỏ hồng chuẩn hình */
+        color: #b81d24;            /* Chữ màu đen */
         font-family: 'Times New Roman', Times, serif;
-        font-size: 16px; /* Tăng độ lớn font chữ */
+        font-size: 18px;
         font-weight: bold;
-        letter-spacing: 2px;
-        text-align: left; /* Chữ về phía bên trái */
-        padding: 6px 20px; /* Tăng chiều cao thanh */
+        letter-spacing: 20px;      /* Giãn khoảng cách các chữ cái */
+        text-align: left;
+        padding: 4px 15px;
         display: block;
-        width: 85%; /* Độ rộng đồng nhất bằng thanh dài nhất */
-        max-width: 650px;
-        margin: 0 auto; /* Canh giữa khung thanh tiêu đề */
-        white-space: nowrap;
+        width: 98%;               /* Kéo dài tràn sang bên phải */
         box-sizing: border-box;
+        background-position: center center
     }
 
     .item-list {
@@ -230,6 +236,7 @@
     .red-text {
         color: #b81d24;
         font-weight: bold;
+        text-decoration: underline;
     }
 
     .orange-text {
@@ -250,45 +257,50 @@
         margin-top: 5px;
     }
 
+    /* FORM GIỮ NGUYÊN BỐ CỤC GAP NHƯ BẠN YÊU CẦU */
     .info-form {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 8px;
-        margin-top: 6px;
+        column-gap: 50px;
+        row-gap: 12px;
+        margin-top: 10px;
+        width: 98%;
+        margin-left: 0;
+        margin-right: auto;
     }
 
     .form-group input[type="text"],
     .form-group select {
         width: 100%;
-        padding: 7px 10px;
-        border: 1px solid #ccc;
+        padding: 5px 8px;
+        border: 1px solid #aaa;
         color: #333;
         font-size: 13px;
-        border-radius: 4px;
+        border-radius: 2px;
     }
 
     .radio-group {
         display: flex;
         align-items: center;
-        gap: 15px;
+        gap: 10px;
         font-size: 13px;
-        color: #333;
+        color: #000;
+        font-family: 'Times New Roman', Times, serif;
     }
 
     .radio-group input[type="radio"] {
-        transform: scale(1.1);
         cursor: pointer;
     }
 
     .form-group textarea {
         width: 100%;
-        height: 65px;
-        min-height: 50px;
-        padding: 8px 10px;
-        border: 1px solid #ccc;
+        height: 45px;
+        min-height: 40px;
+        padding: 5px 8px;
+        border: 1px solid #aaa;
         color: #333;
         font-size: 13px;
-        border-radius: 4px;
+        border-radius: 2px;
         grid-column: span 2;
         resize: vertical;
     }
@@ -296,36 +308,40 @@
     .form-buttons {
         grid-column: span 2;
         display: flex;
-        gap: 10px;
+        gap: 5px;
     }
 
     .form-buttons button {
-        padding: 6px 18px;
+        padding: 2px 10px;
         background-color: #f0f0f0;
-        border: 1px solid #ccc;
+        border: 1px solid #888;
         cursor: pointer;
         font-size: 12px;
-        font-weight: bold;
-        border-radius: 3px;
+        border-radius: 2px;
     }
 
     .form-buttons button:hover {
         background-color: #e0e0e0;
     }
 
+    /* SIDEBAR RIGHT */
     .sidebar-right {
         width: 250px;
         background-color: #000;
         color: #fff;
-        padding: 10px 12px;
+        padding: 10px 20px 15px 20px;
         flex-shrink: 0;
         display: flex;
         flex-direction: column;
+        margin: 10px 10px 10px 0;
     }
 
     .sidebar-right h2 {
-        font-size: 16px;
-        margin-bottom: 6px;
+        font-size: 22px;
+        margin-bottom: 12px;
+        margin-left: -20px;
+        padding-left: 5px;
+        font-family: 'Times New Roman', Times, serif;
     }
 
     .event-item {
@@ -333,27 +349,28 @@
     }
 
     .event-item h3 {
-        font-size: 12px;
-        margin-bottom: 3px;
+        font-size: 14px;
+        margin-bottom: 6px;
         font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
     }
 
     .event-item img {
         width: 100%;
-        height: 65px;
+        height: 110px;
         object-fit: cover;
-        margin-bottom: 3px;
+        margin-bottom: 6px;
     }
 
     .event-item p {
         font-size: 11px;
         color: #ccc;
-        line-height: 1.25;
-        text-align: justify;
+        line-height: 1.3;
+        text-align: left;
     }
 
     .event-item a {
-        color: #ccc;
+        color: #d9534f;
         text-decoration: underline;
         cursor: pointer;
     }
@@ -394,7 +411,7 @@
         </div>
         
         <div class="search-box">
-            <input type="text" placeholder="Search...">
+            <input type="text">
             <input type="button" value="Go">
         </div>
     </nav>
@@ -415,7 +432,7 @@
         <section class="main-content-panel">
             <div>
                 <div class="section-header-container">
-                    <div class="section-header">S t a r t e r</div>
+                    <div class="section-header">Starter</div>
                 </div>
                 <ul class="item-list">
                     <li>Chesnut and Mushroom Goujons <span class="red-text">(v)</span></li>
@@ -426,7 +443,7 @@
                 <a href="#" class="back-link">Back to Top</a>
 
                 <div class="section-header-container">
-                    <div class="section-header">D e s s e r t s</div>
+                    <div class="section-header">Desserts</div>
                 </div>
                 <ul class="item-list">
                     <li>Lemon Sorbet <span class="red-text">(v)</span></li>
@@ -439,7 +456,7 @@
 
             <div class="info-section">
                 <div class="section-header-container">
-                    <div class="section-header">I N F O R M A T I O N</div>
+                    <div class="section-header">INFORMATION</div>
                 </div>
                 <form>
                     <div class="info-form">
@@ -447,7 +464,7 @@
                             <input type="text" placeholder="First Name">
                         </div>
                         <div class="form-group">
-                            <input type="text" placeholder="Last Name">
+                            <input type="text" placeholder="Last Name'">
                         </div>
                         <div class="form-group">
                             <input type="text" placeholder="Email">
@@ -458,11 +475,11 @@
                         <div class="form-group">
                             <select>
                                 <option value="USA">USA</option>
-                                <option value="VN">Vietnam</option>
+                                <option value="VN">Viet Nam</option>
                             </select>
                         </div>
                         <div class="radio-group">
-                            <label><input type="radio" name="nationality" value="vietnamese"> Vietnamese</label>
+                            <label><input type="radio" name="nationality" value="vietnamese"> VietNamese</label>
                             <label><input type="radio" name="nationality" value="foreigner"> Foreigner</label>
                         </div>
                         <div class="form-group" style="grid-column: span 2;">
@@ -470,7 +487,7 @@
                         </div>
                         <div class="form-buttons">
                             <button type="submit">Submit</button>
-                            <button type="reset">Cancel</button>
+                            <button type="reset">Cacel</button>
                         </div>
                     </div>
                 </form>
